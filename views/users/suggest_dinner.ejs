@@ -1,0 +1,41 @@
+<div class="amber lighten-3">
+  <div class="container">
+    <div id="greeting_menu" class="user_div">
+        <h3>What do you want for dinner?</h3>
+        <h5>I want: </h5>
+        <form action="/users/<%= user.id %>/suggest_dinner" method="post">
+          <div class="form-group">
+            <input type="text" name="meal_name" placeholder="Your request here.">
+            <button type="submit" name="suggest" class="orange darken-4 btn waves-effect waves-light">Make Suggestion</button>
+          </div>
+        </form>
+    </div>
+
+    <div id="edit_user" class="user_div">
+        <h3>Edit User Info</h3>
+        <form action="/users/<%= user.id %>/edit_user" method="post">
+          <div class="form-group">
+            <label for="name">Name: </label>
+            <input type="text" name="name" class="user_input" value="<%= user.name %>">
+          </div>
+          <div class="form-group">
+            <label for="email">Email: </label>
+            <input type="text" name="email" class="user_input" value="<%= user.email %>">
+          </div>
+          <div class="form-group">
+            <label for="about">About: </label>
+            <textarea name="about" rows="3" cols="80" class="user_input"><%= user.about %></textarea>
+          </div>
+            <button class="orange darken-4 btn waves-effect waves-light" type="submit" name="edit" class="user_input">Edit</button>
+        </form>
+
+    </div>
+
+        <form action="/users/<%= user.id %>/delete" method="post" class="center-align">
+            <button class="orange darken-4 btn waves-effect waves-light" type="submit" name="delete">Delete Account</button>
+        </form>
+  </div>
+</div>
+<script type="text/javascript">
+    $("#nav-mobile").append(`<li><a href="/users/logout">Logout</a></li>`);
+</script>

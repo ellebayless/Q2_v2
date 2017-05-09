@@ -1,0 +1,59 @@
+<div class="amber lighten-3">
+
+
+<div class="container">
+  <div id="greeting_menu" class="user_div">
+
+
+
+    <% var meal = '' %>
+    <% for (var i = 0; i < suggestions.length; i++) { %>
+      <% if (suggestions[i].accept_meal) { %>
+        <% meal = suggestions[i].meal_name %>
+      <% } %>
+    <% } %>
+
+    <% console.log(meal) %>
+
+    <div id="greeting_menu" class="user_div">
+      <h3>What's for Dinner Tonight?</h3>
+      <h4 class="center-align"><%= meal.charAt(0).toUpperCase() %><%= meal.slice(1) %></h4>
+    </div>
+
+    </div>
+
+    <div id="edit_user" class="user_div">
+      <h3>Edit User Info</h3>
+      <form action="/users/<%= user.id %>/view_dinner" method="post">
+        <div class="form-group">
+          <label for="name">Name: </label>
+          <input type="text" name="name" class="user_input" value="<%= user.name %>">
+        </div>
+        <div class="form-group">
+          <label for="email">Email: </label>
+          <input type="text" name="email" class="user_input" value="<%= user.email %>">
+        </div>
+        <div class="form-group">
+          <label for="about">About: </label>
+          <textarea name="about" rows="3" cols="80" class="user_input"><%= user.about %></textarea>
+        </div>
+        <button type="submit" name="edit" class="user_input orange darken-4 btn waves-effect waves-light">Edit</button>
+      </form>
+    </div>
+
+    <form action="/users/<%= user.id %>/delete" method="post" class="center-align">
+      <button type="submit" name="delete" class="user_input orange darken-4 btn waves-effect waves-light">Delete Account</button>
+    </form>
+</div>
+</div>
+<script type="text/javascript">
+  var meal = '<%= meal %>'
+  console.log("The meal is "+meal);
+  $.getJSON(`https://api.edamam.com/search?q=${meal}/`, function(data) {
+  console.log($('#greeting_menu'));
+  $('#greeting_menu').append(`<img id="meal_img" src="${data.hits[0].recipe.image}">`)
+  console.log(data.hits[0].recipe.label);
+  });
+
+  $("#nav-mobile").append(`<li><a href="/users/logout">Logout</a></li>`);
+</script>

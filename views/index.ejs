@@ -1,0 +1,92 @@
+
+    <div class="amber lighten-3">
+      <div id="jumbo"></div>
+      <div id="main">
+        <h2>Do you know what's for dinner?</h2>
+        <h5 class="intro">If this is an all-too-common question in your home, you need <b>Let's Eat!</b>,
+    an app that simplifies dinner time. Each member of your family will have the ability to suggest ideas
+    for dinner each night. Based on these suggestions, an administrator can choose which suggestion will
+    be tonight's meal. After the selection is made, other members can view the decision.</h5>
+      <h5 class="intro">Welcome to <b>Let's Eat!</b>. Bringing democracy to the dinner table.</h5>
+
+        <div class="row icons">
+          <div class="col s4 center">
+            <i class="large material-icons">thumb_up</i>
+            <h5><b>Dinner Democracy</b></h5>
+            <p>All members of the family have a chance to vote on dinner each night.</p>
+          </div>
+          <div class="col s4 center">
+            <i class="large material-icons">list</i>
+            <h5><b>User Friendly</b></h5>
+            <p>Each family member's suggestion is shown on the administrator's dashboard in a list. He or she review all suggestions.</p>
+          </div>
+          <div class="col s4 center">
+            <i class="large material-icons">done</i>
+            <h5><b>Parent Approved</b></h5>
+            <p>Ultimately, parents can select the meal that is served based on family members' suggestions.</p>
+          </div>
+        </div>
+      </div>
+      <div id="login" class="container">
+
+        <div class="row">
+          <div class="col s6">
+            <h3 class="logsign_label">Login</h3>
+            <form class="form" action="/" method="post">
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" name="email">
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="text" name="password">
+              </div>
+              <button class="orange darken-4 btn waves-effect waves-light" type="submit" name="login">Login</button>
+            </form>
+
+            <!-- Social-login begins here -->
+          <div class="social-login">
+              <h3>or login with:</h3>
+              <div class="social-login-buttons">
+                  <a class="orange darken-4 btn waves-effect waves-light" href="/auth/facebook">
+                      <i class="fa fa-facebook">  </i>
+                       Facebook
+                  </a>
+              </div>
+          </div>
+          </div>
+          <div class="col s6" id="signup">
+            <h3 class="logsign_label">Sign up</h3>
+            <form class="form" action="/signup" method="post">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" name="name">
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" name="email">
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="text" name="password">
+              </div>
+              <div class="form-group">
+                <label for="password">Tell us about yourself. </label>
+                <textarea name="about" rows="8" cols="80"></textarea>
+              </div>
+              <div class="form-group" id="radio">
+                <label for="role">Select user type.</label>
+                <input type="radio" name="role" value="1" id="user"><label for="user">User</label>
+                <input type="radio" name="role" value="2" id="admin"><label for="admin">Administrator</label>
+                <input type="radio" name="role" value="3" id="superuser"><label for="superuser">Superuser</label>
+              </div>
+              <button class="orange darken-4 btn waves-effect waves-light" type="submit" name="signup">Sign up</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<script type="text/javascript">
+  $("#nav-mobile").append(`<li><a href="#login">Login</a></li>`)
+</script>

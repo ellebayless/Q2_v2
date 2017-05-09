@@ -1,0 +1,92 @@
+<div class="amber lighten-3">
+  <% var cookie_accept = cookie_accept %>
+  <div class="container">
+
+    <div id="dash" class="user_div">
+
+      <h3 class="center-align">Users</h3>
+      <table class="dash_table centered highlight">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Delete User</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for (var i = 0; i < all_users.length; i++) { %>
+            <tr><td><%= all_users[i].name %></td><td><%= all_users[i].email %></td><td><a href="/dash/<%= all_users[i].id %>/delete"><button class=" orange darken-4 btn waves-effect waves-light" name="delete" type="button">DELETE</button></a></td></tr>
+          <% } %>
+        </tbody>
+      </table>
+
+
+      <% if (cookie_accept) { %>
+        <h3 class="center-align">Suggestions</h3>
+        <table class="dash_table centered highlight sugg">
+          <thead>
+            <tr>
+              <th>Meal</th>
+              <th>Suggested By</th>
+              <th>Accept</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <% for (var i = 0; i < suggestions.length; i++) { %>
+              <tr><td><%= suggestions[i].meal_name %></td><td><%= users_name[i].name %></td><td>Meal Already Selected</td></tr>
+            <% } %>
+
+          </tbody>
+        </table>
+
+        <form class="center-align" id="undo" action="/dash/undo" method="post">
+          <input type="hidden" value="<%= user.id %>" name="id">
+          <button class="orange darken-4 btn waves-effect waves-light" type="submit" name="undo">Undo</button>
+        </form>
+
+      <% } else { %>
+        <h3 class="center-align">Suggestions</h3>
+        <table class="dash_table centered highlight sugg">
+          <thead>
+            <tr>
+              <th>Meal</th>
+              <th>Suggested By</th>
+              <th>Accept</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <% for (var i = 0; i < suggestions.length; i++) { %>
+              <tr><td><%= suggestions[i].meal_name %></td><td><%= users_name[i].name %></td><td><form action="/dash/<%= suggestions[i].id %>/accepted" method="post"><button type="submit" name="accept" class="orange darken-4 btn waves-effect waves-light">Accept</button></form></td></tr>
+            <% } %>
+
+          </tbody>
+        </table>
+      <% } %>
+
+
+        <div id="edit_user" class="user_div">
+          <h3>Edit User Info</h3>
+          <form action="/dash/<%= user.id %>/edit" method="post">
+            <div class="form-group">
+              <label for="name">Name: </label>
+              <input type="text" name="name" class="user_input" value="<%= user.name %>">
+            </div>
+            <div class="form-group">
+              <label for="email">Email: </label>
+              <input type="text" name="email" class="user_input" value="<%= user.email %>">
+            </div>
+            <div class="form-group">
+              <label for="about">About: </label>
+              <textarea name="about" rows="3" cols="80" class="user_input"><%= user.about %></textarea>
+            </div>
+            <button type="submit" name="edit" value="Edit" class="user_input  orange darken-4 btn waves-effect waves-light">Edit</button>
+          </form>
+      </div>
+    </div>
+  </div>
+</div>  
+<script type="text/javascript">
+    $("#nav-mobile").append(`<li><a href="/users/logout">Logout</a></li>`);
+</script>

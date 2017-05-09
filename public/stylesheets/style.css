@@ -1,0 +1,207 @@
+/*html {
+    font-family: "Fredericka the Great", "Helvetica Neue", Trebuchet, sans-serif;
+  }*/
+
+.row {
+  margin: 0
+}
+
+nav a {
+  margin-left: 30px;
+  font-family: 'Fredericka the Great', cursive;
+}
+
+nav ul {
+  margin-right: 30px;
+}
+
+#jumbo {
+  height: 40vh;
+  background: url("/images/dinner_table.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#main {
+  width: 80%;
+  margin: auto;
+  margin-bottom: 30px;
+}
+
+.icons {
+  margin: 50px 0;
+}
+
+.logsign_label {
+  margin-bottom: 40px;
+}
+
+h2, h3 {
+  font-family: 'Fredericka the Great', cursive;
+  color: #e65100;
+}
+
+h5, label, h4 {
+font-family: 'Metrophobic', sans-serif;
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #696969;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #696969;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #696969;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    #696969;
+}
+
+button[type=submit] {
+  margin: 20px 0;
+}
+
+.form-group:nth-child(5) {
+  margin-top: 10px;
+}
+
+.form-group label {
+  color: #000;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+/*Aligns radio buttons vertically*/
+#radio > label  {
+  display: block;
+}
+
+  /* label underline focus color */
+.form-group input[type=text]:focus {
+   border-bottom: 1px solid #e65100;
+   box-shadow: 0 1px 0 0 #e65100;
+}
+
+/*This style removes a bit of padding between radio button and label - may need to remove*/
+[type="radio"]:not(:checked) + label {
+  padding-left: 25px;
+}
+/*This may need to be removed as well*/
+[type="radio"]:checked + label {
+  padding-left: 25px;
+}
+/*Following two styles change radio checked color*/
+[type="radio"]:checked + label:after, [type="radio"].with-gap:checked + label:after {
+  background-color: #e65100;
+  border: 2px solid #e65100;
+}
+textarea {
+  background-color: #FFF;
+  border: 2px solid #999;
+}
+
+textarea:focus {
+  outline: none;
+  border: 2px solid #e65100;
+  box-shadow: 0 0 10px #e65100;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+#main {
+  flex: 1 0 auto;
+}
+
+/*USERS*/
+
+#greeting_menu {
+  margin: 50px 0;
+}
+
+#meal_img {
+  display: block;
+  margin: auto;
+  border: 5px solid #F57C00;
+}
+
+#user_accept_image {
+  height: 40vh;
+  background: url('/images/tarte.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#user_suggest_image {
+  height: 40vh;
+  background: url('/images/curry.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#delete_image {
+  height: 40vh;
+  background: url('/images/stew.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/*DASH*/
+
+#dash {
+  margin: 50px auto;
+}
+
+.dash_table, .suggestion_table {
+  border: 3px solid #e65100;
+  margin: 30px auto;
+  background-color: #ffb74d;
+}
+
+.sugg {
+  margin-bottom: 60px;
+}
+
+thead {
+  border-bottom: 1px solid #e65100;
+}
+
+#back button {
+  display: block;
+  margin: 30px auto;
+}
+
+#dash_image {
+  height: 40vh;
+  background: url('/images/quinoa.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+/*SUGGESTIONS*/
+
+#sugg_image {
+  height: 40vh;
+  background: url('/images/pancakes.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}

@@ -1,0 +1,13 @@
+<div class="amber lighten-3">
+  <div id="confirm" class="user_div">
+    <div id="user_accept_image"></div>
+    <h3 class="center-align">Thank you, <%= user.name %>!</h3>
+
+    <h4 class="center-align"><%= message %></h4>
+    <a id="back" href="/users/<%= user.id %>/view_dinner"><button type="button" name="back" class="orange darken-4 btn waves-effect waves-light">Back to Profile</button></a>
+
+  </div>
+</div>
+<script type="text/javascript">
+    $("#nav-mobile").append(`<li><a href="/users/logout">Logout</a></li>`);
+</script>
